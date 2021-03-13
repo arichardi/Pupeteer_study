@@ -15,7 +15,7 @@ const questions = {
 }
 
 function result(err, result) {
-    console.log('your page' + result.page)
+    console.log('your page ' + result.page)
 }
 
 prompt.start()
