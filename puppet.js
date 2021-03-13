@@ -11,14 +11,14 @@ async function seachMyPage(webPage) {
         const article = {
             title: '',
             dataText: '',
-            //author: '',
-            //bodyText: ''
+            author: '',
+            bodyText: ''
         }
         //insert the data in the object
         article.title = document.querySelector('.c-content-head').innerText
         article.dataText = document.querySelector('.c-more-options__header').innerText
-        //article.title = document.querySelector('.c-content-head').innerText
-        //article.title = document.querySelector('.c-content-head').innerText
+        article.author = document.querySelector('.c-signature__author').innerText
+        article.bodyText = document.querySelector('.c-news__body').innerText
         //return the object
         return article
     } )
