@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer')
+const createArticle = require('./app/library/createArticle')
 
 async function seachMyPage(webPage) {
     const browser = await puppeteer.launch({ headless: false });
@@ -9,17 +10,20 @@ async function seachMyPage(webPage) {
         //make the object
         const article = {
             title: '',
-            //data: '',
+            data: '',
             //author: '',
             //body: ''
         }
         //insert the data in the object
-        article.title = document.querySelector('.c-content-head')
+        article.title = document.querySelector('.c-content-head').innerText
+        article.data = document.querySelector('.c-more-options__header').innerText
+        //article.title = document.querySelector('.c-content-head').innerText
+        //article.title = document.querySelector('.c-content-head').innerText
         //return the object
         return article
     } )
 
-    console.log(WebText.title)
+    createArticle(WebText)
  
     await browser.close()
     
